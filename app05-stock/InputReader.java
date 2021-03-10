@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version    0.1 (2016.02.29)
  *
  * Modified by Derek Peacock 13/12/2020
- * Modified by Nick Day 10/03/21
+ * Modified by Nick Day 10/03/21 to fix validation bug in getString()
  */
 public class InputReader
 {
@@ -31,13 +31,16 @@ public class InputReader
      */
     public String getString(String prompt)
     {
+		//re-instantiate scanner object to prevent empty nextLine
+        reader = new Scanner(System.in);
+
         String inputLine = null;
         boolean isValid = false;
 
         while(!isValid)
         {
             System.out.print(prompt);         // print prompt
-            inputLine = reader.next();
+            inputLine = reader.nextLine();
 
             if(!inputLine.isEmpty())
                 isValid = true;
