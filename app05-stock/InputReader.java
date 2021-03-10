@@ -9,6 +9,7 @@ import java.util.Scanner;
  * @version    0.1 (2016.02.29)
  *
  * Modified by Derek Peacock 13/12/2020
+ * Modified by Nick Day 10/03/21
  */
 public class InputReader
 {
